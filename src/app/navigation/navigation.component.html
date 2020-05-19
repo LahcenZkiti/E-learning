@@ -1,0 +1,24 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav">
+      <mat-toolbar color="secondary">Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['/routePath']" routerLinkActive="router-link-active" ><mat-icon>list</mat-icon><span>List</span></a>
+        <a mat-list-item [routerLink]="['/routePath']" routerLinkActive="router-link-active" ><mat-icon>person_add</mat-icon><span>Profil</span></a>
+        <a mat-list-item [routerLink]="['/routePath']" routerLinkActive="router-link-active" ><mat-icon>cancel</mat-icon><span>Quiter</span></a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="secondary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu
+          </mat-icon>
+        </button>
+        <span class="spacer"></span>
+        <div fxLayoutAlign="space-between center">
+            <button mat-button  ><span>Discussion</span></button>
+            <button mat-button  ><span>Travaux et devoirs</span></button>
+            <button mat-button  ><span>Participant</span></button>
+        </div>
+      </mat-toolbar>
+    </mat-sidenav-content>
+</mat-sidenav-container>
