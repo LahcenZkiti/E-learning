@@ -13,8 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
-import { NavHorizontalComponent } from './nav-horizontal/nav-horizontal.component';
-import { NavVerticalComponent } from './nav-vertical/nav-vertical.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 
@@ -25,8 +24,7 @@ import { NavVerticalComponent } from './nav-vertical/nav-vertical.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavHorizontalComponent,
-    NavVerticalComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
