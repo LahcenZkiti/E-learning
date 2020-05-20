@@ -1,0 +1,21 @@
+{
+  "etudiants": [
+    {
+      "id": 1,
+      "nom": "zkiti",
+      "prenom": "lahcen",
+      "email": "zkiti@gmail.com",
+      "date_de_naissance": "07/12/1994",
+      "tel": "+212670184914"
+    }
+  ],
+  "formateurs": [
+    {
+      "id": 1,
+      "nom": "Elhajji",
+      "prenom": "med",
+      "email": "elhajji@gmail.com",
+      "tel": "+212662134932"
+    }
+  ]
+}
