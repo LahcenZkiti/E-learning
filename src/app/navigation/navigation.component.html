@@ -3,15 +3,15 @@
     <mat-toolbar color="secondary">
       <button mat-button [matMenuTriggerFor]="menu"><mat-icon aria-label="Side nav toggle icon">menu</mat-icon></button>
       <mat-menu #menu="matMenu" color="secondary">
-        <button mat-menu-item><mat-icon>list</mat-icon><span>List</span></button>
-        <button mat-menu-item><mat-icon>person_add</mat-icon><span>Profil</span></button>
-        <button mat-menu-item><mat-icon>cancel</mat-icon><span>Quiter</span></button>
+        <a mat-menu-item [routerLink]="['/participant/list']" routerLinkActive="router-link-active"><mat-icon>list</mat-icon><span>List</span></a>
+        <a mat-menu-item [routerLink]="['/profil']" routerLinkActive="router-link-active"><mat-icon>person_add</mat-icon><span>Profil</span></a>
+        <a mat-menu-item [routerLink]="['/quiter']" routerLinkActive="router-link-active"><mat-icon>cancel</mat-icon><span>Quiter</span></a>
       </mat-menu>
       <span class="spacer"></span>
       <div fxLayoutAlign="space-between center">
-          <button mat-button  ><span>Discussion</span></button>
-          <button mat-button  ><span>Travaux et devoirs</span></button>
-          <button mat-button  ><span>Participant</span></button>
+          <a mat-stroked-button [routerLink]="['/discussion']" routerLinkActive="router-link-active">Discussion</a>
+          <a mat-stroked-button [routerLink]="['/devoirs']" routerLinkActive="router-link-active"><span>Travaux et devoirs</span></a>
+          <a mat-stroked-button [routerLink]="['/participant/list']" routerLinkActive="router-link-active"><span>Participant</span></a>
       </div>
     </mat-toolbar>
   </mat-sidenav-content>
