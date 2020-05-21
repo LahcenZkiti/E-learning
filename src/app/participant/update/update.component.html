@@ -1,5 +1,5 @@
-<form class="example-form" >
-    <mat-form-field class="example-full-width">
+<form class="example-form" *ngIf="myEtudiant" #f="ngForm" (ngSubmit)="updateEtud(f)" >
+    <mat-form-field  class="example-full-width">
       <mat-label>Nom</mat-label>
       <input [(ngModel)]="myEtudiant.nom" name= "nom" matInput placeholder="Entrer Nom" >
     </mat-form-field>
@@ -34,8 +34,7 @@
     </mat-form-field>
     
     <div class="example-button-row">
-        <button (click)="ajoutEtudiant()" mat-raised-button color="primary" type="submit">Enregistrer</button>
-        <button mat-raised-button color="primary" (click)="annule()">Annuler</button>
+        <button mat-raised-button color="warn" type="submit"><mat-icon matSuffix>update</mat-icon></button>
     </div>
 
   </form>

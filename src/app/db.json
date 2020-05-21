@@ -5,8 +5,27 @@
       "nom": "zkiti",
       "prenom": "lahcen",
       "email": "zkiti@gmail.com",
-      "date_de_naissance": "07/12/1994",
-      "tel": "+212670184914"
+      "age": 26,
+      "date_de_naissance": "1994-05-23T00:00:00.000Z",
+      "tel": "212670184914"
+    },
+    {
+      "nom": "ali",
+      "prenom": "atiali",
+      "email": "ali@gmail.com",
+      "age": 32,
+      "date_de_naissance": "1988-05-08T00:00:00.000Z",
+      "tel": "212612543687",
+      "id": 2
+    },
+    {
+      "nom": "mustapha",
+      "prenom": "stuph",
+      "email": "mustapha@gmail.com",
+      "age": 27,
+      "date_de_naissance": "1993-05-07T00:00:00.000Z",
+      "tel": "212661554654",
+      "id": 3
     }
   ],
   "formateurs": [

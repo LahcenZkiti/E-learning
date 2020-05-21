@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ServicesService } from 'src/app/services.service';
 import { Etudiant } from 'src/app/models/etudiant';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -9,8 +10,19 @@ import { Etudiant } from 'src/app/models/etudiant';
 })
 export class ListComponent implements OnInit {
 
-  etudiants : Etudiant[] = [];
-  constructor(private listService: ServicesService) { }
+  myEtudiant: Etudiant = {
+    nom:'',
+    prenom:'',
+    email:'',
+    age:0,
+    date_de_naissance:'',
+    tel:''
+  }
+
+  etudiants : Etudiant[] = []
+
+  constructor(private listService: ServicesService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.getEtudiants();
@@ -22,9 +34,12 @@ export class ListComponent implements OnInit {
 
   deleteEtudiant(id) {
     this.listService.delete(id).subscribe(() => {
-        this.etudiants = this.etudiants.filter(etudiant => etudiant.id != id );
+      this.etudiants = this.etudiants.filter(etudiant => etudiant.id != id );
     });
   };
 
+  editEtudiant(etudiantId: number) { 
+    this.router.navigate(['/edit/etudiants', etudiantId]);
+  };
 
 }

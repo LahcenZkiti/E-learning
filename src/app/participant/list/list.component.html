@@ -1,10 +1,10 @@
 <div class="p-4 text-right hidden" id="plus">
-    <a href="/participant/add" id="addEtud">
+    <a [routerLink]="['/participant/add']" routerLinkActive="router-link-active" >
         <mat-icon>add_circle_outline</mat-icon>
     </a>
   </div>
 
-  <div class="p-4 " id="getEtudiants">
+  <div class="p-4 ">
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -12,10 +12,10 @@
           <th scope="col">Nom</th>
           <th scope="col">Prénom</th>
           <th scope="col">email</th>
-          <th scope="col">Date de naissance</th>
+          <th scope="col">Age</th>
           <th scope="col">Tél</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -24,9 +24,9 @@
           <td>{{etudiant.nom}}</td>
           <td>{{etudiant.prenom}}</td>
           <td>{{etudiant.email}}</td>
-          <td>{{etudiant.date_de_naissance}}</td>
+          <td>{{etudiant.age}}</td>
           <td>+{{etudiant.tel}}</td>
-          <td><button class="btn btn-sm btn-warning"><mat-icon>edit</mat-icon></button></td>
+          <td><button (click)="editEtudiant(etudiant.id)" class="btn btn-sm btn-warning"><mat-icon>edit</mat-icon></button></td>
           <td><button (click)="deleteEtudiant(etudiant.id)" class="btn btn-sm btn-dark"><mat-icon>delete</mat-icon></button></td>
         </tr>
       </tbody>
