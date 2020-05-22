@@ -19,12 +19,12 @@
       "id": 2
     },
     {
-      "nom": "mustapha",
-      "prenom": "stuph",
-      "email": "mustapha@gmail.com",
-      "age": 27,
-      "date_de_naissance": "1993-05-07T00:00:00.000Z",
-      "tel": "212661554654",
+      "nom": "hicham",
+      "prenom": "ait",
+      "email": "hichamq@gmail.com",
+      "age": 37,
+      "date_de_naissance": "1983-08-19T00:00:00.000Z",
+      "tel": "21266276543",
       "id": 3
     }
   ],
@@ -35,6 +35,13 @@
       "prenom": "med",
       "email": "elhajji@gmail.com",
       "tel": "+212662134932"
+    },
+    {
+      "nom": "lahcen",
+      "prenom": "zkiti",
+      "email": "zkitilahcen@gmail.com",
+      "tel": "212670098654",
+      "id": 2
     }
   ]
 }

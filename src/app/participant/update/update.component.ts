@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Etudiant } from 'src/app/models/etudiant';
 import {FormControl, Validators, NgForm} from '@angular/forms';
-import { ServicesService } from 'src/app/services.service';
+import { ServicesService } from 'src/app/etudiants.service';
 
 @Component({
   selector: 'app-update',

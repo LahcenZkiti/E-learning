@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from 'src/app/services.service';
+import { ServicesService } from 'src/app/etudiants.service';
 import {FormControl, Validators} from '@angular/forms';
 import { Etudiant } from 'src/app/models/etudiant';
 import { Router } from '@angular/router';

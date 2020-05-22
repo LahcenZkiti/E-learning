@@ -24,6 +24,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateComponent } from './participant/update/update.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 
@@ -33,7 +34,8 @@ import { UpdateComponent } from './participant/update/update.component';
     NavigationComponent,
     ListComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddComponent } from './participant/add/add.component';
 import { ListComponent } from './participant/list/list.component';
 import { UpdateComponent } from './participant/update/update.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 const routes: Routes = [{
@@ -16,6 +17,10 @@ const routes: Routes = [{
 {
   path: 'edit/etudiants/:id',
   component: UpdateComponent
+},
+{
+  path:'profil/add',
+  component: ProfilComponent
 }];
 
 @NgModule({
