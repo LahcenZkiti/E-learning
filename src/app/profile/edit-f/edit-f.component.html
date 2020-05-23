@@ -1,0 +1,27 @@
+<form class="example-form" *ngIf="myFormateur" #f="ngForm" (ngSubmit)="updateFormateur(f)" >
+    <mat-form-field  class="example-full-width">
+      <mat-label>Nom</mat-label>
+      <input [(ngModel)]="myFormateur.nom" name= "nom" matInput placeholder="Entrer Nom" >
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Prenom</mat-label>
+      <input [(ngModel)]="myFormateur.prenom" name="prenom" matInput placeholder="Enter prenom">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input [(ngModel)]="myFormateur.email" name="email" matInput  placeholder="Ex. pat@example.com">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Telephone</mat-label>
+        <input [(ngModel)]="myFormateur.tel" name="tel" type="tel" matInput placeholder="555-555-1234">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    
+    <div class="example-button-row">
+        <button mat-raised-button color="warn" type="submit"><mat-icon matSuffix>update</mat-icon></button>
+    </div>
+
+  </form>

@@ -1,0 +1,9 @@
+<form *ngFor="let formateur of formateurs" class="example-form">
+    <h1>{{formateur.nom}} {{formateur.prenom}}</h1>
+    <mat-card fxLayout="row"> <mat-icon fxLayout="left">email</mat-icon> <span>{{formateur.email}}</span></mat-card>
+    <mat-card fxLayout="row"><mat-icon>phone</mat-icon><span>{{formateur.tel}}</span></mat-card>
+    <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit" (click)="add()"><mat-icon>add</mat-icon></button>
+        <button mat-raised-button color="warn" (click)="editFormateur(formateur.id)"><mat-icon>update</mat-icon></button>
+    </div>
+</form>

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +26,9 @@ import { HttpClientModule} from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { UpdateComponent } from './participant/update/update.component';
-
+import { AddFComponent } from './profile/add-f/add-f.component';
+import { ListFComponent } from './profile/list-f/list-f.component';
+import { EditFComponent } from './profile/edit-f/edit-f.component';
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import { UpdateComponent } from './participant/update/update.component';
     NavigationComponent,
     ListComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    AddFComponent,
+    ListFComponent,
+    EditFComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,9 @@ import { UpdateComponent } from './participant/update/update.component';
     MatNativeDateModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

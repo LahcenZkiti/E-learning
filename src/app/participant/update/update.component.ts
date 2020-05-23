@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Etudiant } from 'src/app/models/etudiant';
 import {FormControl, Validators, NgForm} from '@angular/forms';
-import { ServicesService } from 'src/app/services.service';
+import { EtudiantsService } from 'src/app/services/etudiants.service';
 
 @Component({
   selector: 'app-update',
@@ -13,7 +13,7 @@ export class UpdateComponent implements OnInit {
   myEtudiant: Etudiant;
 
   constructor(private route: ActivatedRoute,
-              private etudiantService:ServicesService,
+              private etudiantService:EtudiantsService,
               private router: Router) { }
 
   ngOnInit(): void {

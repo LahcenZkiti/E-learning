@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ServicesService } from 'src/app/services.service';
+import { EtudiantsService } from 'src/app/services/etudiants.service';
 import { Etudiant } from 'src/app/models/etudiant';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
 
   etudiants : Etudiant[] = []
 
-  constructor(private listService: ServicesService,
+  constructor(private listService: EtudiantsService,
               private router:Router) { }
 
   ngOnInit(): void {

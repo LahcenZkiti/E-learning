@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from 'src/app/services.service';
+import { EtudiantsService } from 'src/app/services/etudiants.service';
 import {FormControl, Validators} from '@angular/forms';
 import { Etudiant } from 'src/app/models/etudiant';
 import { Router } from '@angular/router';
@@ -23,7 +23,7 @@ export class AddComponent implements OnInit {
 
   etudiants : Etudiant[] = [];
 
-  constructor(private addService: ServicesService,
+  constructor(private addService: EtudiantsService,
               private router:Router) { }
   
 
