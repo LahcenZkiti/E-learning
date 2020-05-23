@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Formateurs } from './models/formateurs';
+import { Formateurs } from '../models/formateurs';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,8 +21,18 @@ export class FormateursService {
     return this.http.get<Formateurs[]>(this.url);
   }
 
-  // la methode ddFormateurs return un formateurs se forme d'un objet
+  //le methode findById() return un formateur avec un id 
+  findById(id: number): Observable<Formateurs> {
+    return this.http.get<Formateurs>(`${this.url}/${id}`);
+  }
+
+  // la methode addFormateurs() return un formateur se forme d'un objet
   addFormateur(formateur) {
     return this.http.post<Formateurs>(this.url, formateur);
+  }
+
+  //la methode update() return un formateur a modifier 
+  update(formateur:Formateurs) : Observable<Formateurs> {
+    return this.http.put<Formateurs>(`${this.url}/${formateur.id}`, formateur)
   }
 }

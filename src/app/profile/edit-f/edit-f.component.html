@@ -1,5 +1,5 @@
-<form class="example-form" #f="ngForm" (ngSubmit)="ajoutFormateurs(f)">
-    <mat-form-field class="example-full-width">
+<form class="example-form" *ngIf="myFormateur" #f="ngForm" (ngSubmit)="updateFormateur(f)" >
+    <mat-form-field  class="example-full-width">
       <mat-label>Nom</mat-label>
       <input [(ngModel)]="myFormateur.nom" name= "nom" matInput placeholder="Entrer Nom" >
     </mat-form-field>
@@ -12,12 +12,6 @@
     <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
         <input [(ngModel)]="myFormateur.email" name="email" matInput  placeholder="Ex. pat@example.com">
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Please enter a valid email address
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email is <strong>required</strong>
-        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -27,8 +21,7 @@
     </mat-form-field>
     
     <div class="example-button-row">
-        <button mat-raised-button color="primary" type="submit">Enregistrer</button>
-        <button mat-raised-button color="primary" (click)="annule()">Annuler</button>
+        <button mat-raised-button color="warn" type="submit"><mat-icon matSuffix>update</mat-icon></button>
     </div>
 
   </form>

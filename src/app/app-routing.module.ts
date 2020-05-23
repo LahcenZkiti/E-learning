@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddComponent } from './participant/add/add.component';
 import { ListComponent } from './participant/list/list.component';
 import { UpdateComponent } from './participant/update/update.component';
-import { ProfilComponent } from './profil/profil.component';
+import { ListFComponent } from './profile/list-f/list-f.component';
+import { AddFComponent } from './profile/add-f/add-f.component';
+import { EditFComponent } from './profile/edit-f/edit-f.component';
 
 
 const routes: Routes = [{
@@ -19,8 +21,16 @@ const routes: Routes = [{
   component: UpdateComponent
 },
 {
-  path:'profil/add',
-  component: ProfilComponent
+  path:'profile',
+  component: ListFComponent
+},
+{
+  path:'profile/add',
+  component:AddFComponent
+},
+{
+  path:'profile/edit/:id',
+  component: EditFComponent
 }];
 
 @NgModule({

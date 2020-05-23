@@ -6,25 +6,25 @@
       "prenom": "lahcen",
       "email": "zkiti@gmail.com",
       "age": 26,
-      "date_de_naissance": "1994-05-23T00:00:00.000Z",
+      "date_de_naissance": "1994-07-12T00:00:00.000Z",
       "tel": "212670184914"
     },
     {
-      "nom": "ali",
-      "prenom": "atiali",
-      "email": "ali@gmail.com",
-      "age": 32,
-      "date_de_naissance": "1988-05-08T00:00:00.000Z",
-      "tel": "212612543687",
+      "nom": "mehdi",
+      "prenom": "sebbar",
+      "email": "mehdi@gmail.com",
+      "age": 26,
+      "date_de_naissance": "1994-10-17T00:00:00.000Z",
+      "tel": "212662876549",
       "id": 2
     },
     {
-      "nom": "hicham",
-      "prenom": "ait",
-      "email": "hichamq@gmail.com",
-      "age": 37,
-      "date_de_naissance": "1983-08-19T00:00:00.000Z",
-      "tel": "21266276543",
+      "nom": "mustapha",
+      "prenom": "mustapha",
+      "email": "stuph@gmail.com",
+      "age": 28,
+      "date_de_naissance": "1992-05-14T00:00:00.000Z",
+      "tel": "212662876547",
       "id": 3
     }
   ],
@@ -34,14 +34,7 @@
       "nom": "Elhajji",
       "prenom": "med",
       "email": "elhajji@gmail.com",
-      "tel": "+212662134932"
-    },
-    {
-      "nom": "lahcen",
-      "prenom": "zkiti",
-      "email": "zkitilahcen@gmail.com",
-      "tel": "212670098654",
-      "id": 2
+      "tel": "+212************"
     }
   ]
 }
