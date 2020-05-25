@@ -36,5 +36,19 @@
       "email": "elhajji@gmail.com",
       "tel": "+212************"
     }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "TypeScript",
+      "link": "https://www.youtube.com/embed/2pZmKW9-I_k",
+      "description": "Calling any of the bypassSecurityTrust... APIs disables Angular's built-in sanitization for the value passed in. Carefully check and audit all values and code paths going into this call. Make sure any user data is appropriately escaped for this security context."
+    },
+    {
+      "title": "Angular",
+      "link": "https://www.youtube.com/embed/DKlTBBuc32c",
+      "description": "We will be using Java 8, Spring Boot, Spring Security, Spring Data JPA, MySQL on the back-end side and on the front end we will be using Angular 9 and Bootstrap 4.\n\nAlso, we will be using Token Based Authentication in the form of JSON Web Tokens (JWT).",
+      "id": 2
+    }
   ]
 }

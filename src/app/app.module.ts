@@ -29,6 +29,10 @@ import { UpdateComponent } from './participant/update/update.component';
 import { AddFComponent } from './profile/add-f/add-f.component';
 import { ListFComponent } from './profile/list-f/list-f.component';
 import { EditFComponent } from './profile/edit-f/edit-f.component';
+import { FluxActiviteComponent } from './travaux-et-devoirs/flux-activite/flux-activite.component';
+import { AjoutActiviteComponent } from './travaux-et-devoirs/ajout-activite/ajout-activite.component';
+import { TravauxPipe } from './pipes/travaux.pipe';
+import { EditFluxComponent } from './travaux-et-devoirs/edit-flux/edit-flux.component';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { EditFComponent } from './profile/edit-f/edit-f.component';
     UpdateComponent,
     AddFComponent,
     ListFComponent,
-    EditFComponent
+    EditFComponent,
+    FluxActiviteComponent,
+    AjoutActiviteComponent,
+    TravauxPipe,
+    EditFluxComponent
   ],
   imports: [
     BrowserModule,
