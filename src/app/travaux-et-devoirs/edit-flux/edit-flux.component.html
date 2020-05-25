@@ -1,5 +1,5 @@
 <div class="d-flex  justify-content-center p-4">
-    <form class="example-form" #f="ngForm" (ngSubmit)="ajoutVideos(f)">
+    <form class="example-form" *ngIf="myVideos" #f="ngForm" (ngSubmit)="editVideos(f)">
         <mat-form-field class="example-full-width">
             <mat-label>Title</mat-label>
             <input [(ngModel)]="myVideos.title" name= "title" matInput placeholder="Entrer le titre" >
@@ -19,8 +19,7 @@
         </p>
 
         <div class="example-button-row">
-            <button mat-raised-button color="primary" type="submit">Enregistrer</button>
-            <button mat-raised-button color="primary" (click)="annule()">Annuler</button>
+            <button mat-raised-button color="warn" type="submit"><mat-icon matSuffix>update</mat-icon></button>
         </div>
     </form>
 </div>

@@ -4,3 +4,7 @@
     width: 720px;
     height: 600px;
 }
+
+mat-card {
+    margin-bottom: 15px;
+}

@@ -32,6 +32,7 @@ import { EditFComponent } from './profile/edit-f/edit-f.component';
 import { FluxActiviteComponent } from './travaux-et-devoirs/flux-activite/flux-activite.component';
 import { AjoutActiviteComponent } from './travaux-et-devoirs/ajout-activite/ajout-activite.component';
 import { TravauxPipe } from './pipes/travaux.pipe';
+import { EditFluxComponent } from './travaux-et-devoirs/edit-flux/edit-flux.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { TravauxPipe } from './pipes/travaux.pipe';
     EditFComponent,
     FluxActiviteComponent,
     AjoutActiviteComponent,
-    TravauxPipe
+    TravauxPipe,
+    EditFluxComponent
   ],
   imports: [
     BrowserModule,

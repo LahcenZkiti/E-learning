@@ -1,13 +1,20 @@
-<form class="d-flex justify-content-center p-4">
+<form class="p-4" fxLayout="column" fxLayoutAlign="space-around center">
     <mat-card *ngFor="let video of videos" class="example-form">
-        <mat-card-header >
+        <mat-card-header class="d-flex justify-content-between p-2">
             <mat-card-title > {{video.title}}</mat-card-title>
+            <div> 
+                <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>more_vert</mat-icon></button>
+                <mat-menu #aboveMenu="matMenu" yPosition="above">
+                    <a [routerLink]="['/cours/add']" routerLinkActive="router-link-active" mat-menu-item><mat-icon>post_add</mat-icon></a>
+                    <a  (click)="edit(video.id)" mat-menu-item><mat-icon>edit</mat-icon></a>
+                </mat-menu>
+            </div>
         </mat-card-header>
         <mat-card-content class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" width="560" height="315" [src]="video.link | travaux" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </mat-card-content>
         <mat-card-content> 
-            <span class="">Description:</span>
+            <mat-card-title>Description:</mat-card-title>
             <p>{{video.description}}</p>
         </mat-card-content>
     </mat-card>

@@ -7,6 +7,8 @@ import { ListFComponent } from './profile/list-f/list-f.component';
 import { AddFComponent } from './profile/add-f/add-f.component';
 import { EditFComponent } from './profile/edit-f/edit-f.component';
 import { FluxActiviteComponent } from './travaux-et-devoirs/flux-activite/flux-activite.component';
+import { AjoutActiviteComponent } from './travaux-et-devoirs/ajout-activite/ajout-activite.component';
+import { EditFluxComponent } from './travaux-et-devoirs/edit-flux/edit-flux.component';
 
 
 const routes: Routes = [{
@@ -36,6 +38,14 @@ const routes: Routes = [{
 {
   path:'cours',
   component:FluxActiviteComponent
+},
+{
+  path:'cours/add',
+  component: AjoutActiviteComponent
+},
+{
+  path: 'cours/edit/:id',
+  component: EditFluxComponent
 }];
 
 @NgModule({
