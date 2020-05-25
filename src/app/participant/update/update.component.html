@@ -1,4 +1,5 @@
-<form class="example-form" *ngIf="myEtudiant" #f="ngForm" (ngSubmit)="updateEtud(f)" >
+<div class="d-flex justify-content-center p-4">
+  <form class="example-form" *ngIf="myEtudiant" #f="ngForm" (ngSubmit)="updateEtud(f)" >
     <mat-form-field  class="example-full-width">
       <mat-label>Nom</mat-label>
       <input [(ngModel)]="myEtudiant.nom" name= "nom" matInput placeholder="Entrer Nom" >
@@ -37,4 +38,5 @@
         <button mat-raised-button color="warn" type="submit"><mat-icon matSuffix>update</mat-icon></button>
     </div>
 
-  </form>
+</form>
+</div>

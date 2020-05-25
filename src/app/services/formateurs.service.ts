@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Formateurs } from '../models/formateurs';
 import { Observable } from 'rxjs';
 
@@ -13,10 +12,9 @@ export class FormateursService {
   url = 'http://localhost:3000/formateurs';
 
   //le constructeur de FormateursService et l'injection de httpClient et Router pour changer des requetes http et des liens des pages
-  constructor(private http: HttpClient,
-              private router: Router) { }
+  constructor(private http: HttpClient) { }
 
-  //la methode findAll() return les formateurs se forme de tablau
+  //la methode findAll() return les formateurs
   findAll() : Observable<Formateurs[]> {
     return this.http.get<Formateurs[]>(this.url);
   }
