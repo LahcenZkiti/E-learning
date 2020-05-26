@@ -3,33 +3,57 @@ import { HttpClient } from '@angular/common/http';
 import { Formateurs } from '../models/formateurs';
 import { Observable } from 'rxjs';
 
+/**
+ * Injectable
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class FormateursService {
 
-  // url de json server de fomateurs
+  /**
+   * Url  of formateurs service
+   */
   url = 'http://localhost:3000/formateurs';
 
-  //le constructeur de FormateursService et l'injection de httpClient et Router pour changer des requetes http et des liens des pages
+
+  /**
+   * Creates an instance of formateurs service.
+   * @param http 
+   */
   constructor(private http: HttpClient) { }
 
-  //la methode findAll() return les formateurs
+  /**
+   * Finds all
+   * @returns all 
+   */
   findAll() : Observable<Formateurs[]> {
     return this.http.get<Formateurs[]>(this.url);
   }
 
-  //le methode findById() return un formateur avec un id 
+  /**
+   * Finds by id
+   * @param id 
+   * @returns by id 
+   */
   findById(id: number): Observable<Formateurs> {
     return this.http.get<Formateurs>(`${this.url}/${id}`);
   }
 
-  // la methode addFormateurs() return un formateur se forme d'un objet
+  /**
+   * Adds formateur
+   * @param formateur 
+   * @returns  
+   */
   addFormateur(formateur) {
     return this.http.post<Formateurs>(this.url, formateur);
   }
 
-  //la methode update() return un formateur a modifier 
+  /**
+   * Updates formateurs service
+   * @param formateur 
+   * @returns update 
+   */
   update(formateur:Formateurs) : Observable<Formateurs> {
     return this.http.put<Formateurs>(`${this.url}/${formateur.id}`, formateur)
   }

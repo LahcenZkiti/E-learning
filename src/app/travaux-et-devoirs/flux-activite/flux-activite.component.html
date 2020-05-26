@@ -5,8 +5,8 @@
             <div> 
                 <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>more_vert</mat-icon></button>
                 <mat-menu #aboveMenu="matMenu" yPosition="above">
-                    <a [routerLink]="['/cours/add']" routerLinkActive="router-link-active" mat-menu-item><mat-icon>post_add</mat-icon></a>
-                    <a  (click)="edit(video.id)" mat-menu-item><mat-icon>edit</mat-icon></a>
+                    <a [routerLink]="['/cours/add']" routerLinkActive="router-link-active" mat-menu-item><mat-icon>post_add</mat-icon>Add</a>
+                    <a  (click)="edit(video.id)" mat-menu-item><mat-icon>update</mat-icon>Update</a>
                 </mat-menu>
             </div>
         </mat-card-header>

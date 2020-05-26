@@ -5,6 +5,9 @@ import { Etudiant } from 'src/app/models/etudiant';
 import { Router } from '@angular/router';
 
 
+/**
+ * Component
+ */
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -12,6 +15,10 @@ import { Router } from '@angular/router';
 })
 export class AddComponent implements OnInit {
   
+
+   /**
+    * My etudiant of add component
+    */
    myEtudiant: Etudiant = {
     nom:'',
     prenom:'',
@@ -21,8 +28,17 @@ export class AddComponent implements OnInit {
     tel:'212'
   }
 
-  etudiants : Etudiant[] = [];
 
+  /**
+   * Etudiants  of add component
+   */
+  etudiants : Etudiant[] = [];
+  
+  /**
+   * Creates an instance of add component.
+   * @param addService 
+   * @param router 
+   */
   constructor(private addService: EtudiantsService,
               private router:Router) { }
   
@@ -30,11 +46,18 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  /**
+   * Email form control of add component
+   */
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-
+  
+  /**
+   * Ajouts etudiant() pour ajouter un etudiant
+   */
   ajoutEtudiant(){
     this.myEtudiant.age = new Date().getFullYear() - new Date(this.myEtudiant.date_de_naissance).getFullYear();
     this.addService.addEtudiant(this.myEtudiant).subscribe((etudiant) => {
@@ -43,10 +66,18 @@ export class AddComponent implements OnInit {
     })
   };
 
+
+  /**
+   * Annules add component
+   */
   annule() {
     this.router.navigate(['participant/list']);
   }
 
+
+  /**
+   * Resets add component
+   */
   reset() {
     this.myEtudiant = {
       nom:'',
