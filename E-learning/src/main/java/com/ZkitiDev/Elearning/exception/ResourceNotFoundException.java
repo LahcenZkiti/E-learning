@@ -1,2 +1,9 @@
-package com.ZkitiDev.Elearning.exception;public class ResourceNotFoundException extends Exception {
+package com.ZkitiDev.Elearning.exception;
+
+public class ResourceNotFoundException extends Exception {
+    private static final long serialVersionUID = 1L;
+
+    public ResourceNotFoundException(String message){
+        super(message);
+    }
 }
