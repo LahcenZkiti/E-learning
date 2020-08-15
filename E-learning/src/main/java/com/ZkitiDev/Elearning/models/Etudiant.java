@@ -24,13 +24,13 @@ public class Etudiant {
     @Email
     @NotBlank(message = "Email cannot be empty or null")
     private String email;
-    @NotBlank
+
     private int age;
     @NotBlank(message = "Phone cannot be empty or null")
     private String phone;
     @NotBlank(message = "Username cannot be empty or null")
     @Size(min = 3, max = 25)
-    private String usernme;
+    private String username;
     @NotBlank
     @Size(min = 6, max = 120)
     private String password;
@@ -42,7 +42,7 @@ public class Etudiant {
                                @Email @NotBlank(message = "Email cannot be empty or null") String email,
                                @NotBlank int age, @NotBlank(message = "Phone cannot be empty or null") String phone,
                                @NotBlank(message = "Username cannot be empty or null")
-                               @Size(min = 3, max = 25) String usernme,
+                               @Size(min = 3, max = 25) String username,
                                @NotBlank @Size(min = 6, max = 120) String password) {
         this.id = id;
         this.firstname = firstname;
@@ -50,7 +50,7 @@ public class Etudiant {
         this.email = email;
         this.age = age;
         this.phone = phone;
-        this.usernme = usernme;
+        this.username = username;
         this.password = password;
     }
 
@@ -106,12 +106,12 @@ public class Etudiant {
         this.phone = phone;
     }
 
-    public String getUsernme() {
-        return usernme;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernme(String usernme) {
-        this.usernme = usernme;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
