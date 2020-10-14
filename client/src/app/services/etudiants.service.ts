@@ -15,20 +15,20 @@ export class EtudiantsService {
   /**
    * Url  of etudiants service
    */
-  url = 'http://localhost:3000/etudiants';
+  url = 'http://localhost:8080/api/etudiants';
 
 
   /**
    * Creates an instance of etudiants service.
-   * @param http 
-   * @param router 
+   * @param http
+   * @param router
    */
   constructor(private http: HttpClient,
               private router:Router ) { }
 
   /**
    * Finds all
-   * @returns all 
+   * @returns all
    */
   findAll() : Observable<Etudiant[]>{
     return this.http.get<Etudiant[]>(this.url);
@@ -36,8 +36,8 @@ export class EtudiantsService {
 
   /**
    * Finds by id
-   * @param id 
-   * @returns by id 
+   * @param id
+   * @returns by id
    */
   findById(id: number): Observable<Etudiant> {
     return this.http.get<Etudiant>(`${this.url}/${id}`);
@@ -45,8 +45,8 @@ export class EtudiantsService {
 
   /**
    * Deletes etudiants service
-   * @param id 
-   * @returns  
+   * @param id
+   * @returns
    */
   delete(id){
     return this.http.delete(`${this.url}/${id}`);
@@ -54,8 +54,8 @@ export class EtudiantsService {
 
   /**
    * Adds etudiant
-   * @param etudiant 
-   * @returns  
+   * @param etudiant
+   * @returns
    */
   addEtudiant(etudiant) {
     return this.http.post<Etudiant>(this.url, etudiant);
@@ -63,13 +63,13 @@ export class EtudiantsService {
 
   /**
    * Updates etudiants service
-   * @param etudiant 
-   * @returns update 
+   * @param etudiant
+   * @returns update
    */
   update(etudiant:Etudiant) : Observable<Etudiant>{
     return this.http.put<Etudiant>(`${this.url}/${etudiant.id}`, etudiant)
   }
 
 
- 
+
 }
