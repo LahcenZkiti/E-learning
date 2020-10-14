@@ -3,17 +3,19 @@ package com.ZkitiDev.Elearning.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.GenericGenerator;
+
 
 @Entity
 public class Etudiant {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
     @NotBlank(message = "Firstname cannot be empty or null")
     @Size(min = 3, max = 20)
@@ -28,10 +30,8 @@ public class Etudiant {
     private int age;
     @NotBlank(message = "Phone cannot be empty or null")
     private String phone;
-    @NotBlank(message = "Username cannot be empty or null")
     @Size(min = 3, max = 25)
     private String username;
-    @NotBlank
     @Size(min = 6, max = 120)
     private String password;
 
@@ -41,9 +41,8 @@ public class Etudiant {
                                @Size(min = 3, max = 20) String lastname,
                                @Email @NotBlank(message = "Email cannot be empty or null") String email,
                                @NotBlank int age, @NotBlank(message = "Phone cannot be empty or null") String phone,
-                               @NotBlank(message = "Username cannot be empty or null")
                                @Size(min = 3, max = 25) String username,
-                               @NotBlank @Size(min = 6, max = 120) String password) {
+                               @Size(min = 6, max = 120) String password) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
