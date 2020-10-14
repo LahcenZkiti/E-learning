@@ -20,12 +20,12 @@ export class ListComponent implements OnInit {
    * My etudiant of list component
    */
   myEtudiant: Etudiant = {
-    nom:'',
-    prenom:'',
+    firstname:'',
+    lastname:'',
     email:'',
     age:0,
     date_de_naissance:'',
-    tel:''
+    phone:''
   }
 
 
@@ -37,8 +37,8 @@ export class ListComponent implements OnInit {
 
   /**
    * Creates an instance of list component.
-   * @param listService 
-   * @param router 
+   * @param listService
+   * @param router
    */
   constructor(private listService: EtudiantsService,
               private router:Router) { }
@@ -62,7 +62,7 @@ export class ListComponent implements OnInit {
 
   /**
    * Deletes etudiant
-   * @param id 
+   * @param id
    */
   deleteEtudiant(id) {
     this.listService.delete(id).subscribe(() => {
@@ -73,9 +73,9 @@ export class ListComponent implements OnInit {
 
   /**
    * Edits etudiant
-   * @param etudiantId 
+   * @param etudiantId
    */
-  editEtudiant(etudiantId: number) { 
+  editEtudiant(etudiantId: number) {
     this.router.navigate(['/edit/etudiants', etudiantId]);
   };
 
