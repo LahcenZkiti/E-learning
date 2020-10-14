@@ -14,18 +14,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  
+
 
    /**
     * My etudiant of add component
     */
    myEtudiant: Etudiant = {
-    nom:'',
-    prenom:'',
+    firstname:'',
+    lastname:'',
     email:'',
     age: 0,
     date_de_naissance:'',
-    tel:'212'
+    phone:'212'
   }
 
 
@@ -33,15 +33,15 @@ export class AddComponent implements OnInit {
    * Etudiants  of add component
    */
   etudiants : Etudiant[] = [];
-  
+
   /**
    * Creates an instance of add component.
-   * @param addService 
-   * @param router 
+   * @param addService
+   * @param router
    */
   constructor(private addService: EtudiantsService,
               private router:Router) { }
-  
+
 
   ngOnInit(): void {
   }
@@ -54,7 +54,7 @@ export class AddComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  
+
   /**
    * Ajouts etudiant() pour ajouter un etudiant
    */
@@ -80,12 +80,12 @@ export class AddComponent implements OnInit {
    */
   reset() {
     this.myEtudiant = {
-      nom:'',
-      prenom:'',
+      firstname:'',
+      lastname:'',
       email:'',
       age:0,
       date_de_naissance:'',
-      tel:''
+      phone:''
     }
   };
 

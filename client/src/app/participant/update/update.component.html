@@ -2,12 +2,12 @@
   <form class="example-form" *ngIf="myEtudiant" #f="ngForm" (ngSubmit)="updateEtud(f)" >
     <mat-form-field  class="example-full-width">
       <mat-label>Nom</mat-label>
-      <input [(ngModel)]="myEtudiant.nom" name= "nom" matInput placeholder="Entrer Nom" >
+      <input [(ngModel)]="myEtudiant.firstname" name= "firstname" matInput placeholder="Entrer Nom" >
     </mat-form-field>
-  
+
     <mat-form-field class="example-full-width">
       <mat-label>Prenom</mat-label>
-      <input [(ngModel)]="myEtudiant.prenom" name="prenom" matInput placeholder="Enter prenom">
+      <input [(ngModel)]="myEtudiant.lastname" name="lastname" matInput placeholder="Enter prenom">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -30,10 +30,10 @@
 
     <mat-form-field class="example-full-width">
         <mat-label>Telephone</mat-label>
-        <input [(ngModel)]="myEtudiant.tel" name="tel" type="tel" matInput placeholder="555-555-1234">
+        <input [(ngModel)]="myEtudiant.phone" name="phone" type="tel" matInput placeholder="555-555-1234">
         <mat-icon matSuffix>mode_edit</mat-icon>
     </mat-form-field>
-    
+
     <div class="example-button-row">
         <button mat-raised-button color="warn" type="submit"><mat-icon matSuffix>update</mat-icon></button>
     </div>

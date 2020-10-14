@@ -8,7 +8,7 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">id</th>
+          <!-- <th scope="col">id</th> -->
           <th scope="col">Nom</th>
           <th scope="col">Prénom</th>
           <th scope="col">email</th>
@@ -20,12 +20,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let etudiant of etudiants">
-          <th scope="row">{{etudiant.id}}</th>
-          <td>{{etudiant.nom}}</td>
-          <td>{{etudiant.prenom}}</td>
+          <!-- <th scope="row">{{etudiant.id}}</th> -->
+          <td>{{etudiant.firstname}}</td>
+          <td>{{etudiant.lastname}}</td>
           <td>{{etudiant.email}}</td>
           <td>{{etudiant.age}}</td>
-          <td>+{{etudiant.tel}}</td>
+          <td>+{{etudiant.phone}}</td>
           <td><button (click)="editEtudiant(etudiant.id)" class="btn btn-sm btn-warning"><mat-icon>edit</mat-icon></button></td>
           <td><button (click)="deleteEtudiant(etudiant.id)" class="btn btn-sm btn-dark"><mat-icon>delete</mat-icon></button></td>
         </tr>
