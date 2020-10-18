@@ -23,7 +23,7 @@ public class EtudiantController {
     @GetMapping()
     public ResponseEntity<List<Etudiant>> getAllEtudiants() throws ResourceNotFoundException {
         List<Etudiant> list =   etudSerImpl.findAll()
-                                            .orElseThrow( ()-> new ResourceNotFoundException("Etudiant not found"));
+                                            .orElseThrow( ()-> new ResourceNotFoundException("No etudiant found"));
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -52,7 +52,7 @@ public class EtudiantController {
         etudiant.setAge(etudiantDetails.getAge());
         etudiant.setPhone(etudiantDetails.getPhone());
         etudiant.setUsername(etudiantDetails.getUsername());
-        etudiant.setPassword(etudiantDetails.getPassword());
+        // etudiant.setPassword(etudiantDetails.getPassword());
 
         final Etudiant updatedEtudiant = etudSerImpl.updateEtudiant(etudiant)
                                                     .orElseThrow(()-> new ResourceNotFoundException("Could not update " + etudiantDetails.toString()));
