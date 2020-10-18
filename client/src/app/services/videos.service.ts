@@ -14,17 +14,17 @@ export class VideosService {
   /**
    * Url ytb of videos service
    */
-  urlYtb = 'http://localhost:3000/videos';
+  urlYtb = 'http://localhost:8080/api/courses';
 
   /**
    * Creates an instance of videos service.
-   * @param http 
+   * @param http
    */
   constructor(private http:HttpClient) { }
 
   /**
    * Finds all
-   * @returns all 
+   * @returns all
    */
   findAll() : Observable<Videos[]> {
     return this.http.get<Videos[]>(this.urlYtb);
@@ -32,8 +32,8 @@ export class VideosService {
 
   /**
    * Finds video by id
-   * @param id 
-   * @returns video by id 
+   * @param id
+   * @returns video by id
    */
   findVideoById(id: number): Observable<Videos> {
     return this.http.get<Videos>(`${this.urlYtb}/${id}`);
@@ -41,8 +41,8 @@ export class VideosService {
 
   /**
    * Adds video
-   * @param video 
-   * @returns video 
+   * @param video
+   * @returns video
    */
   addVideo(video: Videos): Observable<Videos> {
     return this.http.post<Videos>(this.urlYtb, video);
@@ -50,8 +50,8 @@ export class VideosService {
 
   /**
    * Updates videos service
-   * @param video 
-   * @returns update 
+   * @param video
+   * @returns update
    */
   update(video:Videos) : Observable<Videos> {
     return this.http.put<Videos>(`${this.urlYtb}/${video.id}`, video)
