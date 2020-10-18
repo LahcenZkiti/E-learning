@@ -1,0 +1,26 @@
+<div class="d-flex  justify-content-center p-4">
+    <form class="example-form" #f="ngForm" (ngSubmit)="ajoutVideos(f)">
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input [(ngModel)]="myVideos.title" name= "title" matInput placeholder="Entrer le titre" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Link</mat-label>
+            <input [(ngModel)]="myVideos.link" name= "link" matInput placeholder="Entrer url ex: https://youtube.com/watch?v=ID">
+            <mat-icon matSuffix>link</mat-icon>
+        </mat-form-field>
+
+        <p>
+            <mat-form-field class="example-full-width">
+              <mat-label>Description</mat-label>
+              <textarea [(ngModel)]="myVideos.description" name="description" matInput></textarea>
+            </mat-form-field>
+        </p>
+
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" type="submit">Enregistrer</button>
+            <button mat-raised-button color="primary" (click)="annule()">Annuler</button>
+        </div>
+    </form>
+</div>
