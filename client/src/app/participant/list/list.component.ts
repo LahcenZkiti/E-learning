@@ -65,9 +65,11 @@ export class ListComponent implements OnInit {
    * @param id
    */
   deleteEtudiant(id) {
-    this.listService.delete(id).subscribe(() => {
-      this.etudiants = this.etudiants.filter(etudiant => etudiant.id != id );
-    });
+    if(confirm("Are you sure to delete this studant")){
+      this.listService.delete(id).subscribe(() => {
+        this.etudiants = this.etudiants.filter(etudiant => etudiant.id != id );
+      });
+    }
   };
 
 
