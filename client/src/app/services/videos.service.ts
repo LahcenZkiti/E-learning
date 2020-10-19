@@ -14,7 +14,7 @@ export class VideosService {
   /**
    * Url ytb of videos service
    */
-  urlYtb = 'http://localhost:8080/api/courses';
+  URL_REST_API = 'http://localhost:8080/api/courses';
 
   /**
    * Creates an instance of videos service.
@@ -27,7 +27,7 @@ export class VideosService {
    * @returns all
    */
   findAll() : Observable<Videos[]> {
-    return this.http.get<Videos[]>(this.urlYtb);
+    return this.http.get<Videos[]>(this.URL_REST_API);
   }
 
   /**
@@ -35,8 +35,8 @@ export class VideosService {
    * @param id
    * @returns video by id
    */
-  findVideoById(id: number): Observable<Videos> {
-    return this.http.get<Videos>(`${this.urlYtb}/${id}`);
+  findVideoById(id): Observable<Videos> {
+    return this.http.get<Videos>(`${this.URL_REST_API}/${id}`);
   }
 
   /**
@@ -45,7 +45,7 @@ export class VideosService {
    * @returns video
    */
   addVideo(video: Videos): Observable<Videos> {
-    return this.http.post<Videos>(this.urlYtb, video);
+    return this.http.post<Videos>(this.URL_REST_API, video);
   }
 
   /**
@@ -54,6 +54,15 @@ export class VideosService {
    * @returns update
    */
   update(video:Videos) : Observable<Videos> {
-    return this.http.put<Videos>(`${this.urlYtb}/${video.id}`, video)
+    return this.http.put<Videos>(`${this.URL_REST_API}/${video.id}`, video)
+  }
+
+  /**
+   * Delete videos service
+   * @param id
+   * @returns
+ */
+  deleteVideo(id): Observable<Videos> {
+    return this.http.delete<Videos>(`${this.URL_REST_API}/${id}`)
   }
 }
