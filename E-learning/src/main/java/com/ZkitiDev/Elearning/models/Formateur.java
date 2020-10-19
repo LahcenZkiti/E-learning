@@ -3,16 +3,18 @@ package com.ZkitiDev.Elearning.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 public class Formateur {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
     @NotBlank(message = "Firstname cannot be empty or null")
     @Size(min = 3, max = 20)
@@ -25,10 +27,8 @@ public class Formateur {
     private String email;
     @NotBlank(message = "Phone cannot be empty or null")
     private String phone;
-    @NotBlank(message = "Username cannot be empty or null")
     @Size(min = 3, max = 25)
-    private String usernme;
-    @NotBlank
+    private String username;
     @Size(min = 6, max = 120)
     private String password;
 
@@ -39,14 +39,14 @@ public class Formateur {
                                 @Email @NotBlank(message = "Email cannot be empty or null") String email,
                                 @NotBlank(message = "Phone cannot be empty or null") String phone,
                                 @NotBlank(message = "Username cannot be empty or null")
-                                @Size(min = 3, max = 25) String usernme,
+                                @Size(min = 3, max = 25) String username,
                                 @NotBlank @Size(min = 6, max = 120) String password) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.phone = phone;
-        this.usernme = usernme;
+        this.username = username;
         this.password = password;
     }
 
@@ -94,12 +94,12 @@ public class Formateur {
         this.phone = phone;
     }
 
-    public String getUsernme() {
-        return usernme;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernme(String usernme) {
-        this.usernme = usernme;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

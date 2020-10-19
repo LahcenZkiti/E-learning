@@ -26,11 +26,11 @@ export class FluxActiviteComponent implements OnInit {
    * Videos  of flux activite component
    */
   videos: Videos[]
-  
+
   /**
    * Creates an instance of flux activite component.
-   * @param videosService 
-   * @param router 
+   * @param videosService
+   * @param router
    */
   constructor(private videosService:VideosService,
               private router:Router) { }
@@ -53,10 +53,22 @@ export class FluxActiviteComponent implements OnInit {
 
   /**
    * Edits flux activite component
-   * @param videoId 
+   * @param videoId
    */
   edit(videoId: number) {
     this.router.navigate(['cours/edit', videoId]);
   }
 
+  /**
+   * Delete video
+   * @param id
+   */
+  deleteVideo(id){
+    if(confirm("Are you sure to delete this cours")){
+      this.videosService.deleteVideo(id).subscribe(() => {
+        this.videos = this.videos.filter(video => video.id != id)
+        console.log("video deleted!!", id)
+      })
+    }
+  }
 }
