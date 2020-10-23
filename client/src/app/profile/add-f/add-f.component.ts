@@ -19,24 +19,24 @@ export class AddFComponent implements OnInit {
    * My formateur of add fcomponent
    */
   myFormateur : Formateurs={
-    nom:'',
-    prenom:'',
+    firstname:'',
+    lastname:'',
     email:'',
-    tel:'212'
+    phone:'212'
   }
 
   /**
    * Formateurs  of add fcomponent
    */
-  formateurs: Formateurs[]=[]
+  formateurs: Formateurs[]
 
   /**
    * Creates an instance of add fcomponent.
-   * @param formateursService 
-   * @param router 
+   * @param formateursService
+   * @param router
    */
   constructor(private formateursService:FormateursService,
-              private router: Router) { }
+              private router: Router){ }
 
 
   /**
@@ -56,7 +56,7 @@ export class AddFComponent implements OnInit {
 
   /**
    * Ajouters formateur
-   * @param f 
+   * @param f
    */
   ajouterFormateur(f:NgForm){
     this.formateursService.addFormateur(this.myFormateur).subscribe(formateur=> {

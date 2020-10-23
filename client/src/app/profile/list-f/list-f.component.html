@@ -3,17 +3,18 @@
         <mat-card  fxLayout="column" fxLayoutAlign="space-between center" >
             <mat-card-header fxLayout="column">
                 <mat-card-title>
-                    {{formateur.nom}} {{formateur.prenom}}
+                    {{formateur.firstname}} {{formateur.lastname}}
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content fxLayout="column">
                 <div><mat-icon>email</mat-icon> <span>{{formateur.email}}</span></div>
-                <div><mat-icon>phone</mat-icon><span>{{formateur.tel}}</span></div>
+                <div><mat-icon>phone</mat-icon><span>{{formateur.phone}}</span></div>
             </mat-card-content>
             <mat-card-footer class="example-button-row">
+                <button mat-raised-button color="accent" (click)="editFormateur(formateur.id)"><mat-icon>update</mat-icon></button>
                 <button mat-raised-button color="primary" type="submit" (click)="add()"><mat-icon>add</mat-icon></button>
-                <button mat-raised-button color="warn" (click)="editFormateur(formateur.id)"><mat-icon>update</mat-icon></button>
+                <button mat-raised-button color="warn" (click)="deleteFormateur(formateur.id)"><mat-icon>delete</mat-icon></button>
             </mat-card-footer>
         </mat-card>
-    </form>  
+    </form>
 </div>

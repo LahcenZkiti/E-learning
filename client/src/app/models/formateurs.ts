@@ -1,7 +1,7 @@
 export interface Formateurs {
     id ?: number;
-    nom : string;
-    prenom : string;
+    firstname : string;
+    lastname : string;
     email : string;
-    tel : string;
+    phone : string;
 }
