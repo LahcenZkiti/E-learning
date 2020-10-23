@@ -14,18 +14,18 @@ export class FormateursService {
   /**
    * Url  of formateurs service
    */
-  url = 'http://localhost:3000/formateurs';
+  url = 'http://localhost:8080/api/formateurs';
 
 
   /**
    * Creates an instance of formateurs service.
-   * @param http 
+   * @param http
    */
   constructor(private http: HttpClient) { }
 
   /**
    * Finds all
-   * @returns all 
+   * @returns all
    */
   findAll() : Observable<Formateurs[]> {
     return this.http.get<Formateurs[]>(this.url);
@@ -33,8 +33,8 @@ export class FormateursService {
 
   /**
    * Finds by id
-   * @param id 
-   * @returns by id 
+   * @param id
+   * @returns by id
    */
   findById(id: number): Observable<Formateurs> {
     return this.http.get<Formateurs>(`${this.url}/${id}`);
@@ -42,8 +42,8 @@ export class FormateursService {
 
   /**
    * Adds formateur
-   * @param formateur 
-   * @returns  
+   * @param formateur
+   * @returns
    */
   addFormateur(formateur) {
     return this.http.post<Formateurs>(this.url, formateur);
@@ -51,10 +51,19 @@ export class FormateursService {
 
   /**
    * Updates formateurs service
-   * @param formateur 
-   * @returns update 
+   * @param formateur
+   * @returns update
    */
   update(formateur:Formateurs) : Observable<Formateurs> {
     return this.http.put<Formateurs>(`${this.url}/${formateur.id}`, formateur)
+  }
+
+  /**
+   * Delete formateur
+   * @param id
+   * @returns formateur
+   */
+  deletFormateur(id): Observable<Formateurs> {
+    return this.http.delete<Formateurs>(`${this.url}/${id}`)
   }
 }

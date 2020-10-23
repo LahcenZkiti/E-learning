@@ -17,10 +17,10 @@ export class ListFComponent implements OnInit {
    * My formateur of list fcomponent
    */
   myFormateur : Formateurs={
-    nom:'',
-    prenom:'',
+    firstname:'',
+    lastname:'',
     email:'',
-    tel:''
+    phone:''
   }
 
   /**
@@ -31,8 +31,8 @@ export class ListFComponent implements OnInit {
 
   /**
    * Creates an instance of list fcomponent.
-   * @param formateurService 
-   * @param router 
+   * @param formateurService
+   * @param router
    */
   constructor(private formateurService:FormateursService,
               private router:Router) { }
@@ -55,11 +55,20 @@ export class ListFComponent implements OnInit {
 
   /**
    * Edits formateur
-   * @param id 
+   * @param id
    */
-  editFormateur(id: number) { 
+  editFormateur(id: number) {
     this.router.navigate(['/profile/edit', id]);
   };
+
+  deleteFormateur(id){
+    if(confirm("Are you sure to delete this formateur")){
+      this.formateurService.deletFormateur(id).subscribe(()=>{
+        this.formateurs = this.formateurs.filter(formateur =>
+          formateur.id != id)
+      })
+    }
+  }
 
   /**
    * Adds list fcomponent

@@ -40,7 +40,7 @@ public class Formateur {
                                 @NotBlank(message = "Phone cannot be empty or null") String phone,
                                 @NotBlank(message = "Username cannot be empty or null")
                                 @Size(min = 3, max = 25) String username,
-                                @NotBlank @Size(min = 6, max = 120) String password) {
+                                @Size(min = 6, max = 120) String password) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
